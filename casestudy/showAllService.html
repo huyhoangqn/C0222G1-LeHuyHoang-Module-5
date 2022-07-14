@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body>
+
+<!--header-->
+<header>
+    <div style="background-color: #e7e9eb" class="container-fluid">
+        <div class="row">
+            <div class="col-6 d-flex justify-content-lg-start">
+                <div class="ml-3 mt-1">
+                    <a href="/home/">
+                        <img src="img/logo.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Furama</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Employee
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Show all employee</a>
+                    <a class="dropdown-item" href="#">Add new employee</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Customer
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Show all customer</a>
+                    <a class="dropdown-item" href="#">Add new customer </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Service
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="showAllService.html">Show all service</a>
+                    <a class="dropdown-item" href="#">Add new service </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Contract
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Show all contract</a>
+                    <a class="dropdown-item" href="#">Add new contract </a>
+                    <a class="dropdown-item" href="#">Add new contract detail </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--content-->
+<div class="container-fluid my-1" style="margin-top: 10%">
+    <div class="row">
+        <div class="col-lg-4">
+            <form action="#" class="form-inline my-2 my-lg-0">
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="search" placeholder="Search...">
+                    <button type="submit" placeholder="Search...">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-8"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center">LIST SERVICE</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6 my-4">
+        <center>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://i-dulich.vnecdn.net/2022/04/03/mangobayphuquocresortresortphu-6013-8137-1648953896_680x0.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN STUDIO</h5>
+                    <p class="card-text">Room size: 5000 m2</p>
+                    <a style="font-size: 35px" href="edit.html"><i class="fas fa-edit"></i></a>
+                    <a style="font-size: 35px; color: red" data-toggle="modal" href="#myModal"><i
+                            class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 my-4">
+        <center>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://i-dulich.vnecdn.net/2022/04/03/mangobayphuquocresortresortphu-6013-8137-1648953896_680x0.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN SUITE</h5>
+                    <p class="card-text">Room size: 800m2</p>
+                    <a style="font-size: 35px" href="edit.html"><i class="fas fa-edit"></i></a>
+                    <a style="font-size: 35px; color: red" data-toggle="modal" href="#myModal"><i
+                            class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 my-4">
+        <center>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://i-dulich.vnecdn.net/2022/04/03/mangobayphuquocresortresortphu-6013-8137-1648953896_680x0.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN DELUXE</h5>
+                    <p class="card-text">Room size: 3000 m2</p>
+                    <a style="font-size: 35px" href="edit.html"><i class="fas fa-edit"></i></a>
+                    <a style="font-size: 35px; color: red" data-toggle="modal" href="#myModal"><i
+                            class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+    <div class="col-lg-3 col-sm-6 my-4">
+        <center>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://i-dulich.vnecdn.net/2022/04/03/mangobayphuquocresortresortphu-6013-8137-1648953896_680x0.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN DELUXE</h5>
+                    <p class="card-text">Room size: 3000 m2</p>
+                    <a style="font-size: 35px" href="edit.html"><i class="fas fa-edit"></i></a>
+                    <a style="font-size: 35px; color: red" data-toggle="modal" href="#myModal"><i
+                            class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+
+</div>
+
+<div class="container my-5">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</div>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <h4 class="modal-title w-100">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete this service?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<footer>
+    <div class="container-fluid">
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4">
+                <section class="">
+                    <form action="">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input placeholder="Enter your email in here" type="email" id="form5Example21"
+                                           class="form-control"/>
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section class="mb-4">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                    </p>
+                </section>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">Furama Resort</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
