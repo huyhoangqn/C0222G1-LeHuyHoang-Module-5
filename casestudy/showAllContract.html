@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body>
+<header>
+    <div style="background-color: #e7e9eb" class="container-fluid">
+        <div class="row">
+            <div class="col-6 d-flex justify-content-lg-start">
+                <div class="ml-3 mt-1">
+                    <a href="/home/">
+                        <img src="img/logo.png">
+                        <!--                        <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">-->
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div class="mr-5 mt-5 font-weight-bold">
+                    <!--                    <h4 th:if="${#request.userPrincipal!=null}" style="color: blue"> User: <span th:utext="${#request.userPrincipal.name}"></span></h4>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home/">Furama</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" thref="/home/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Employee
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/employee/show">Show all employee</a>
+                        <a class="dropdown-item" href="/employee/create">Add new employee</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Customer
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/customer/show">Show all customer</a>
+                        <a class="dropdown-item" href="/customer/create">Add new customer </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Service
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/service/showAll">Show all service</a>
+                        <a class="dropdown-item" href="/service/create">Add new service </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Contract
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/contract/show">Show all contract</a>
+                        <a class="dropdown-item" href="/contract/createContract">Add new contract </a>
+                        <a class="dropdown-item" href="/contract/createContractDetail">Add new contract detail </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!--                    <a th:if="${#request.userPrincipal != null}" href="/logout">Logout</a>-->
+                </li>
+            </ul>
+            <!--            <form class="form-inline my-2 my-lg-0">-->
+            <!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+            <!--            </form>-->
+        </div>
+    </nav>
+</header>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="text-warning text-center">LIST CONTRACT</h1>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th style="text-align: center" scope="col">ID</th>
+        <th style="text-align: center" scope="col">Start day</th>
+        <th style="text-align: center" scope="col">End day</th>
+        <th style="text-align: center" scope="col">Customer</th>
+        <th style="text-align: center" scope="col">Cost</th>
+        <th style="text-align: center" scope="col">Edit</th>
+        <th style="text-align: center" scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody id="contractList">
+    </tbody>
+</table>
+<div class="container my-5">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</div>
+<script>
+    var contract = [
+        {
+            iD: 1,
+            startDay: "2022-01-01",
+            endDay: "2022-02-02",
+            customer: "Nam",
+            cost: "123456789",
+        },
+        {
+            iD: 2,
+            startDay: "2022-01-01",
+            endDay: "2022-02-02",
+            customer: "Nam",
+            cost: "123456789",
+        },
+        {
+            iD: 3,
+            startDay: "2022-01-01",
+            endDay: "2022-02-02",
+            customer: "Nam",
+            cost: "123456789",
+        },
+        {
+            iD: 4,
+            startDay: "2022-01-01",
+            endDay: "2022-02-02",
+            customer: "Nam",
+            cost: "123456789",
+        }
+    ];
+    let content = '';
+    for (let i = 0; i < contract.length; i++) {
+        content += getContract(contract[i]);
+    }
+    document.getElementById('contractList').innerHTML = content
+
+    function getContract(contract) {
+        return `<tr>
+            <td style="text-align: center" >${contract.iD} </td>
+            <td style="text-align: center" >${contract.startDay} </td>
+            <td style="text-align: center" >${contract.endDay} </td>
+            <td style="text-align: center" >${contract.customer} </td>
+            <td style="text-align: center" >${contract.cost} </td>
+            <td style="text-align: center" ><a style="font-size: 35px" href="#"><i class="fas fa-edit"></i></a></td>
+                    <td style="text-align: center"><a style="font-size: 35px; color: red" data-toggle="modal" href="#myModal"><i
+                            class="fa-solid fa-trash"></i></a></td>
+                 </tr>`
+    }
+</script>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <h4 class="modal-title w-100">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete this service?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container-fluid">
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4">
+                <section class="">
+                    <form action="">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input placeholder="Enter your email in here" type="email" id="form5Example21"
+                                           class="form-control"/>
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section class="mb-4">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                    </p>
+                </section>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">Furama Resort</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+</footer>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+</html>
