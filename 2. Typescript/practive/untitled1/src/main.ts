@@ -1,4 +1,4 @@
-export function calculateSum(n:number):number
+function calculateSum(n:number):number
 {
     let fibo = [];
     if (n <= 0)
@@ -18,5 +18,4 @@ export function calculateSum(n:number):number
 
     return sum;
 }
-
 console.log(calculateSum(4))
