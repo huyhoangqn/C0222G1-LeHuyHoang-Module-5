@@ -1,0 +1,14 @@
+<p>calculator works!</p>
+<label >Number 1</label>
+<input type="number" [ngModel]="number1">
+<br>
+<label >Number 2</label>
+<input type="number" [(ngModel)]="number2">
+<br>
+<button (click)="add()">Cộng</button>
+<button (click)="sub()">Trừ</button>
+<button (click)="mul()">Nhân</button>
+<button (click)="div()">Chia</button>
+
+<h1>{{number3}}</h1>
+
