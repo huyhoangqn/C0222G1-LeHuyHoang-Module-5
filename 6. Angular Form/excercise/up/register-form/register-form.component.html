@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <!--Form Create-->
+      <h2 style="text-align: center; color: cornflowerblue">Register form</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input formControlName="email" name="email" type="text" class="form-control" id="email" placeholder="Enter email">
+          <div *ngIf="!email.valid && email.touched">
+            <small [hidden]="!email.hasError('required')" class="text-danger">You must enter email</small>
+            <small [hidden]="!email.hasError('email')" class="text-danger">Wrong format</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input formControlName="password" name="password" type="password" class="form-control" id="password" placeholder="Enter password">
+          <div *ngIf="!password.valid && password.touched">
+            <small [hidden]="!password.hasError('required')" class="text-danger">You must enter password</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm password: </label>
+          <input formControlName="confirmPassword" name="confirmPassword" type="password" class="form-control" id="password2" placeholder="Enter password">
+          <div *ngIf="!confirmPassword.valid && confirmPassword.touched">
+            <small [hidden]="!confirmPassword.hasError('required')" class="text-danger">You must enter password</small>
+            <small [hidden]="!confirmPassword.hasError('mustMatch')" class="text-danger">Wrong password</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select formControlName="country" name="country" class="form-control w-50" id="country">
+            <option disabled value="">---select---</option>
+            <option value="VN">Viet Nam</option>
+            <option value="LAOS">Lào</option>
+            <option value="CAMP">Campuchia</option>
+          </select>
+          <div *ngIf="!country.valid && country.touched">
+            <small [hidden]="!country.hasError('required')" class="text-danger">You must choose
+              country</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age: </label>
+          <input formControlName="age" name="age" type="date" class="form-control" id="age" placeholder="Enter age">
+          <div *ngIf="!age.valid && age.touched">
+            <small [hidden]="!age.hasError('required')" class="text-danger">You must enter age</small>
+            <small [hidden]="!age.hasError('not18')" class="text-danger">You must enter age greater than 18</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Type of customer</label>
+          <select formControlName="gender" name="gender" class="form-control w-50" id="gender">
+            <option disabled value="">---select---</option>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+            <option value="2">Khác</option>
+          </select>
+          <div *ngIf="!gender.valid && gender.touched">
+            <small [hidden]="!gender.hasError('required')" class="text-danger">You must choose
+              gender</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone: </label>
+          <input formControlName="phone" name="phone" type="text" class="form-control" id="phone" placeholder="Enter phone">
+          <div *ngIf="!phone.valid && phone.touched">
+            <small [hidden]="!phone.hasError('required')" class="text-danger">You must enter phone</small>
+            <small [hidden]="!phone.hasError('pattern')" class="text-danger">Invalid phone(Example: +84123456789)</small>
+          </div>
+        </div>
+        <div class="form-group" style="text-align: left">
+          <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+
