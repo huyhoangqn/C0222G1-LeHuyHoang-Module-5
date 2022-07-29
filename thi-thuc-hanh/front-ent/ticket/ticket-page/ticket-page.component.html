@@ -1,0 +1,113 @@
+<div style="background-image: url(assets/image/hinhnen.jpg); height: 1000px" class="container-fluid py-5">
+  <div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-4">
+              <h2>Manage <b>Ticket</b></h2>
+            </div>
+            <div class="col-sm-4">
+              <a [routerLink]="['/ticket/create']" class="btn btn-success" data-toggle="modal"><i
+                class="material-icons">&#xE147;</i> <span>Add New Ticket</span></a>
+            </div>
+            <!--            <div class="input-group rounded col-sm-4">-->
+            <!--              <input (input)="getString($event.target.value)" type="search" class="form-control rounded"-->
+            <!--                     placeholder="Enter name to search" aria-label="Search" aria-describedby="search-addon"/>-->
+            <!--            </div>-->
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th>No.</th>
+            <th>Id</th>
+            <th>Price</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Amount</th>
+            <th>Provider</th>
+            <th>Book ticket</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            *ngFor="let item of ticketList | paginate: {itemsPerPage: itemPerPage, currentPage: page, totalItems: totalLength }; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.fromPlace}}</td>
+            <td>{{item.toPlace}}</td>
+            <td>{{item.day|date:'dd-MM-yyyy'}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.provider.name}}</td>
+            <td>
+              <a (click)="getInfoBook(item)" href="#bookTicket" data-toggle="modal">
+                <button class="btn btn-success">Book</button></a>
+            </td>
+            <td>
+              <a [routerLink]="['/ticket/update', item.id]" class="edit" data-toggle="modal"><i
+                class="material-icons"
+                data-toggle="tooltip"
+                title="Edit">&#xE254;</i></a>
+            </td>
+            <td>
+              <a (click)="getInfo(item)" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
+                class="material-icons"
+                data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+                <pagination-controls (pageChange)="getPage(page = $event)">...</pagination-controls>
+      </div>
+    </div>
+  </div>
+  <!--     Delete Modal HTML-->
+  <div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Delete Student</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p>Do you want to delete this ticket?</p>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+            <input data-dismiss="modal" type="submit" class="btn btn-danger" value="Delete"
+                   (click)="deleteTicket(id)">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--     Book ticket Modal HTML-->
+<div id="bookTicket" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Book Ticket</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want book this ticket?</p>
+      </div>
+      <div class="modal-footer">
+        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+        <input data-dismiss="modal" type="submit" class="btn btn-danger" value="Book"
+               (click)="bookTicket(ticket)">
+      </div>
+    </div>
+  </div>
+</div>
+
+
