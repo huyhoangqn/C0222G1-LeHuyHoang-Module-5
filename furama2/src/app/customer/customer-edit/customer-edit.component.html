@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <!--Form Update-->
+      <h2 style="text-align: center; color: cornflowerblue">Update Customer</h2>
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
+        <input formControlName="id" name="id" type="hidden" class="form-control">
+        <div class="form-group">
+          <label for="code">Customer code</label>
+          <input formControlName="code" name="code" type="text" class="form-control" id="code" placeholder="Enter code">
+          <div *ngIf="!code.valid && code.touched">
+            <small [hidden]="!code.hasError('required')" class="text-danger">You must enter code</small>
+            <small [hidden]="!code.hasError('pattern')" class="text-danger">Invalid code (Example: KH-0001)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input formControlName="name" name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+          <div *ngIf="!name.valid && name.touched">
+            <small [hidden]="!name.hasError('required')" class="text-danger">You must enter name</small>
+            <small [hidden]="!name.hasError('pattern')" class="text-danger">Invalid name(Example: John Doe)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input formControlName="birthday" name="birthday" type="date" class="form-control" id="birthday" placeholder="Birthday">
+          <div *ngIf="!birthday.valid && birthday.touched">
+            <small [hidden]="!birthday.hasError('required')" class="text-danger">You must enter birthday</small>
+            <small [hidden]="!birthday.hasError('pattern')" class="text-danger">Invalid birthday</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idCard">ID Card</label>
+          <input formControlName="idCard" name="idCard" type="text" class="form-control" id="idCard" placeholder="Enter Id Card">
+          <div *ngIf="!idCard.valid && idCard.touched">
+            <small [hidden]="!idCard.hasError('required')" class="text-danger">You must enter id card</small>
+            <small [hidden]="!idCard.hasError('pattern')" class="text-danger">Invalid id card (Example: 123456789 or 123456789123)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" name="email" type="text" class="form-control" id="email" placeholder="abc@.gmailcom">
+          <div *ngIf="!email.valid && email.touched">
+            <small [hidden]="!email.hasError('required')" class="text-danger">You must enter email</small>
+            <small [hidden]="!email.hasError('pattern')" class="text-danger">Invalid email(Example: abc@.gmailcom)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender </label>
+          <select formControlName="gender" name="gender" id="gender" class="form-control w-50">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unknown">Unknown</option>
+          </select>
+          <div *ngIf="!gender.valid && gender.touched">
+            <small [hidden]="!gender.hasError('required')" class="text-danger">You must choose gender</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input formControlName="phone" name="phone" type="text" class="form-control" id="phone" placeholder="Enter Phone">
+          <div *ngIf="!phone.valid && phone.touched">
+            <small [hidden]="!phone.hasError('required')" class="text-danger">You must enter phone</small>
+            <small [hidden]="!phone.hasError('pattern')" class="text-danger">Invalid email(Example: 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input formControlName="address" name="address" type="text" class="form-control" id="address" placeholder="Enter Address">
+          <div *ngIf="!address.valid && address.touched">
+            <small [hidden]="!address.hasError('required')" class="text-danger">You must enter address</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="type">Type of customer</label>
+          <select formControlName="typeCustomer" name="typeCustomer" class="form-control w-50" id="type">
+            <ng-container *ngFor="let type of typeCustomerList">
+              <ng-container *ngIf="type['id']=== customer.typeCustomer['id']; else elseBlock">
+                <option selected [ngValue]="type" [value]="type['name']">{{type['name']}}</option>
+              </ng-container>
+              <ng-template #elseBlock>
+                <option [ngValue]="type">{{type['name']}}</option>
+              </ng-template>
+            </ng-container>
+          </select>
+          <div *ngIf="!typeCustomer.valid && typeCustomer.touched">
+            <small [hidden]="!typeCustomer.hasError('required')" class="text-danger">You must choose type customer</small>
+          </div>
+        </div>
+        <div class="form-group" style="text-align: left">
+          <button [disabled]="!customerForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+

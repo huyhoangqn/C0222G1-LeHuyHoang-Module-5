@@ -1,0 +1,40 @@
+<a [routerLink]="['/service-create']"><button class="btn btn-primary">Create</button></a>
+<table id="tableEmployee" class="table table-striped table-bordered" style="width: 100%">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Code</th>
+    <th scope="col">Name</th>
+    <th scope="col">Standard</th>
+    <th scope="col">Area</th>
+    <th scope="col">Pool area</th>
+    <th scope="col">Number of floor</th>
+    <th scope="col">Max of people</th>
+    <th scope="col">Description other convenience</th>
+    <th scope="col">Status</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Service Type</th>
+    <th scope="col">Rent Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let service of services; index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{service.code}}</td>
+    <td>{{service.name}}</td>
+    <td *ngIf="service.standard == 1">VIP</td>
+    <td *ngIf="service.standard == 2">Normal</td>
+    <td>{{service.area}}</td>
+    <td>{{service.poolArea}}</td>
+    <td>{{service.numberOfFloor}}</td>
+    <td>{{service.maxOfPeople}}</td>
+    <td>{{service.description}}</td>
+    <td>{{service.status}}</td>
+    <td>{{service.cost}}</td>
+    <td *ngIf="service.serviceType == 1">Room</td>
+    <td *ngIf="service.serviceType == 2">House</td>
+    <td *ngIf="service.rentType == 1">Day</td>
+    <td *ngIf="service.rentType == 2">Month</td>
+  </tr>
+  </tbody>
+</table>

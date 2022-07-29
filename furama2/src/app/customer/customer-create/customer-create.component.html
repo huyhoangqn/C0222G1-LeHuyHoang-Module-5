@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <!--Form Create-->
+      <h2 style="text-align: center; color: cornflowerblue">Create Customer</h2>
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="code">Customer code</label>
+          <input formControlName="customerId" name="code" type="text" class="form-control" id="code" placeholder="Enter code">
+          <div *ngIf="!customerId.valid && customerId.touched">
+            <small [hidden]="!customerId.hasError('required')" class="text-danger">You must enter code</small>
+            <small [hidden]="!customerId.hasError('pattern')" class="text-danger">Invalid code (Example: KH-0001)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input formControlName="customerName" name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+          <div *ngIf="!customerName.valid && customerName.touched">
+            <small [hidden]="!customerName.hasError('required')" class="text-danger">You must enter name</small>
+            <small [hidden]="!customerName.hasError('pattern')" class="text-danger">Invalid name(Example: John Doe)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input formControlName="customerBirthday" name="birthday" type="date" class="form-control" id="birthday"
+                 placeholder="Birthday">
+          <div *ngIf="!customerBirthday.valid && customerBirthday.touched">
+            <small [hidden]="!customerBirthday.hasError('required')" class="text-danger">You must enter birthday</small>
+            <small [hidden]="!customerBirthday.hasError('pattern')" class="text-danger">Invalid birthday</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idCard">ID Card</label>
+          <input formControlName="customerIdCard" name="idCard" type="text" class="form-control" id="idCard"
+                 placeholder="Enter Id Card">
+          <div *ngIf="!customerIdCard.valid && customerIdCard.touched">
+            <small [hidden]="!customerIdCard.hasError('required')" class="text-danger">You must enter id card</small>
+            <small [hidden]="!customerIdCard.hasError('pattern')" class="text-danger">Invalid id card (Example: 123456789 or
+              123456789123)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="customerEmail" name="email" type="text" class="form-control" id="email"
+                 placeholder="abc@.gmailcom">
+          <div *ngIf="!customerEmail.valid && customerEmail.touched">
+            <small [hidden]="!customerEmail.hasError('required')" class="text-danger">You must enter email</small>
+            <small [hidden]="!customerEmail.hasError('pattern')" class="text-danger">Invalid email(Example:
+              abc@.gmailcom)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender </label>
+          <select formControlName="customerGender" name="gender" id="gender" class="form-control w-50">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unknown">Unknown</option>
+          </select>
+          <div *ngIf="!customerGender.valid && customerGender.touched">
+            <small [hidden]="!customerGender.hasError('required')" class="text-danger">You must choose gender</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input formControlName="customerPhone" name="phone" type="text" class="form-control" id="phone"
+                 placeholder="Enter Phone">
+          <div *ngIf="!customerPhone.valid && customerPhone.touched">
+            <small [hidden]="!customerPhone.hasError('required')" class="text-danger">You must enter phone</small>
+            <small [hidden]="!customerPhone.hasError('pattern')" class="text-danger">Invalid email(Example: 090xxxxxxx or
+              091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx)</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input formControlName="customerAddress" name="address" type="text" class="form-control" id="address"
+                 placeholder="Enter Address">
+          <div *ngIf="!customerAddress.valid && customerAddress.touched">
+            <small [hidden]="!customerAddress.hasError('required')" class="text-danger">You must enter address</small>
+          </div>
+        </div>
+        <div class="form-group" formGroupName="customerType" >
+          <label for="type">Type of customer</label>
+          <select formControlName="customerTypeId" class="form-control w-50" id="type">
+            <option disabled value="">---select---</option>
+            <option value="1">VIP 1</option>
+            <option value="2">VIP 2</option>
+            <option value="3">VIP 3</option>
+          </select>
+<!--          <div *ngIf="!customerTypeId.valid && customerTypeId.touched">-->
+<!--            <small [hidden]="!customerTypeId.hasError('required')" class="text-danger">You must choose type-->
+<!--              customer</small>-->
+<!--          </div>-->
+        </div>
+        <div class="form-group" style="text-align: left">
+          <button [disabled]="!customerForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

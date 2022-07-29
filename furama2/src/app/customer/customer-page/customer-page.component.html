@@ -1,0 +1,62 @@
+<table id="tableCustomer" class="table table-striped table-bordered" style="width: 100%">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Code</th>
+    <th scope="col">Name</th>
+    <th scope="col">Date of birth</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Email</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Address</th>
+    <th scope="col">Type customer</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{customer.customerId}}</td>
+    <td>{{customer.customerName}}</td>
+    <td>{{customer.customerBirthday}}</td>
+    <td>{{customer.customerIdCard}}</td>
+    <td>{{customer.customerEmail}}</td>
+    <!--    <td *ngIf="customer.gender == 1">Nam</td>-->
+    <!--    <td *ngIf="customer.gender == 0">Nữ</td>-->
+    <td>{{customer.customerGender}}</td>
+    <td>{{customer.customerPhone}}</td>
+    <td>{{customer.customerAddress}}</td>
+    <!--    <td *ngIf="customer.typeCustomer == 1">Vip 1</td>-->
+    <!--    <td *ngIf="customer.typeCustomer == 2">Vip 2</td>-->
+    <td>{{customer.customerType.customerTypeName}}</td>
+    <td>
+      <button class="btn btn-danger"><a type="button" style="color: red; color: white"
+                                        data-toggle="modal"
+                                        data-target="#myModal">
+        Delete</a></button>
+    </td>
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+          <div class="modal-header flex-column">
+            <h4 class="modal-title w-100">Are you sure?</h4>
+          </div>
+          <div class="modal-body">
+            <p>Do you really want to delete this customer?</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button data-dismiss="modal" (click)="deleteCustomer(customer.customerId)" type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
