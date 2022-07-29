@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid" style="margin-top: 10%">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-warning text-center">CREATE SERVICE</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <form>
+        <input type="text" hidden="hidden" >
+        <div class="form-group">
+          <label for="inputName">Name service:</label>
+          <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="form-group">
+          <label for="serviceType">Service type:</label>
+          <select onchange="displayInput()" id="serviceType" class="form-control w-25">
+            <option value="1" >Type 1</option>
+            <option value="2" >Type 2</option>
+            <option value="3" >Type 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="area">Area:</label>
+          <input type="text" class="form-control" id="area">
+        </div>
+        <div class="form-group">
+          <label for="cost">Cost:</label>
+          <input type="text" class="form-control" id="cost">
+        </div>
+        <div class="form-group">
+          <label for="maxPeople">Max people:</label>
+          <input type="text" class="form-control" id="maxPeople">
+        </div>
+        <div id="wrapVillaHouse">
+          <div class="form-group">
+            <label for="standardRoom">Standard room:</label>
+            <input type="text" class="form-control" id="standardRoom">
+          </div>
+          <div class="form-group">
+            <label for="descriptionOtherConvenience">Description other convenience:</label>
+            <input type="text" class="form-control" id="descriptionOtherConvenience">
+          </div>
+          <div class="form-group">
+            <label for="numberOfFloors">Number of floors:</label>
+            <input  type="text" class="form-control" id="numberOfFloors">
+          </div>
+        </div>
+        <div class="form-group" id="villa">
+          <label for="poolArea">Pool area:</label>
+          <input  type="text" class="form-control" id="poolArea">
+        </div>
+        <div class="form-group">
+          <label for="rentType">Rent type:</label>
+          <select id="rentType" class="form-control w-25">
+            <option value="1">Ngày</option>
+            <option value="2">Tháng</option>
+            <option value="3">Năm</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</div>
+</body>
+</html>
