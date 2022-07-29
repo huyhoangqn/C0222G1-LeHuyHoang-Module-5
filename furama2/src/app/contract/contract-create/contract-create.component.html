@@ -1,0 +1,72 @@
+<!--Form Create-->
+<form [formGroup]="contractForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="code">Contract code</label>
+    <input formControlName="contractCode" type="text" class="form-control" id="code" placeholder="Contract's code">
+    <div *ngIf="!contractCode.valid && contractCode.touched">
+      <small [hidden]="!contractCode.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="cusCode">Customer code</label>
+    <select class="form-control" id="cusCode" formControlName="customerCode">
+      <option>KH-0001</option>
+      <option>KH-0002</option>
+    </select>
+    <div *ngIf="!customerCode.valid && customerCode.touched">
+      <small [hidden]="!customerCode.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="degree">Employee code</label>
+    <select class="form-control" id="degree" formControlName="employeeCode">
+      <option>NV-0001</option>
+      <option>NV-0002</option>
+    </select>
+    <div *ngIf="!employeeCode.valid && employeeCode.touched">
+      <small [hidden]="!employeeCode.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="serCode">Service code</label>
+    <select class="form-control" id="serCode" formControlName="serviceCode ">
+      <option>DV-0001</option>
+      <option>DV-0002</option>
+    </select>
+    <div *ngIf="!serviceCode.valid && serviceCode.touched">
+      <small [hidden]="!serviceCode.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="startDate">Start date</label>
+    <input formControlName="contractDate" type="date" class="form-control" id="startDate" placeholder="Start date">
+    <div *ngIf="!contractDate.valid && contractDate.touched">
+      <small [hidden]="!contractDate.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="endDate">End date</label>
+    <input formControlName="endDate" type="date" class="form-control" id="endDate" placeholder="End date">
+    <div *ngIf="!endDate.valid && endDate.touched">
+      <small [hidden]="!endDate.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="deposit">Deposit</label>
+    <input formControlName="deposit" type="text" class="form-control" id="deposit" placeholder="Deposit">
+    <div *ngIf="!deposit.valid && deposit.touched">
+      <small [hidden]="!deposit.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="totalPayment">Total Payment</label>
+    <input formControlName="totalPayment" type="text" class="form-control" id="totalPayment" placeholder="Deposit">
+    <div *ngIf="!totalPayment.valid && totalPayment.touched">
+      <small [hidden]="!totalPayment.hasError('required')" class="text-danger">You must enter code</small>
+    </div>
+  </div>
+  <div class="form-group" style="text-align: left">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
