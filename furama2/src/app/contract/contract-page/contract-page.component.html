@@ -1,0 +1,29 @@
+<a [routerLink]="['/contract-create']"><button class="btn btn-primary" routerLink="create">Create</button></a>
+<table id="tableCustomer" class="table table-striped table-bordered" style="width: 100%">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Contact Code</th>
+    <th scope="col">Employee Code</th>
+    <th scope="col">Customer Code</th>
+    <th scope="col">Service Code</th>
+    <th scope="col">Contract Date</th>
+    <th scope="col">End Date</th>
+    <th scope="col">Deposit</th>
+    <th scope="col">Total Payment</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contract of contracts; index as i">
+    <th scope="row">{{i+1}}</th>
+    <td>{{contract.contractCode}}</td>
+    <td>{{contract.employeeCode}}</td>
+    <td>{{contract.customerCode}}</td>
+    <td>{{contract.serviceCode}}</td>
+    <td>{{contract.contractDate}}</td>
+    <td>{{contract.endDate}}</td>
+    <td>{{contract.deposit}}</td>
+    <td>{{contract.totalPayment}}</td>
+  </tr>
+  </tbody>
+</table>
